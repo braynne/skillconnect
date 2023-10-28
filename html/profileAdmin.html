@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>perfil</title>
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="../js/admin-check.js"></script>
+
+    <script src="../js/perfil.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-expand-md bg-body-tertiary bg-dark border-bottom border-body"
+            data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../img/logo.avif" alt="" width="24" height="24">
+                    SkillConnect
+                    </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="../index.html">Página principal</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contáctenos</a>
+                          </li>
+                        
+
+                    </ul>
+                </div>
+                <div class="d-flex" style="padding-left: 1%;">
+                        <input onclick="logout()" class="btn btn-secondary" type="button" value="Cerrar sesión">
+                    </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row mb-5">
+            <div class="col-lg-3 col-md-4 col-sm-12 col-12 mt-3">
+                <div class="list-group">
+                    <a href="home-admin.html" class="list-group-item list-group-item-action active" aria-current="true">Inicio</a>
+                    <a href="profileAdmin.html" class="list-group-item list-group-item-action">Perfil</a>
+                    <a href="#" class="list-group-item list-group-item-action">Ajustes</a>
+                    <a href="adminview.html" class="list-group-item list-group-item-action">Vista de
+                        Administrador</a>
+
+                </div>
+            </div>
+    
+            <div class="col-lg-9 col-md-8 col-sm-12 col-12 mt-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card-body">
+                            <img src="../img/perfil-de-usuario.avif" alt="" class="img-fluid">
+                            <h2><div id="nombre-usuario"></div></h2>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8 col-sm-12 col-12 mt-3">
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Username</th>
+                                    <th>Role</th>
+                                    <th>Occupation</th>
+                                    <th>full name</th>
+                                </tr>
+                            </thead>
+                            <tbody id="datos_perfil"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+    <script src="../js/minscript.js"></script>      
+    
+    <footer class="footer">
+        <div class="container-fluid bg-dark text-center bg-body-tertiary text-light bottom-0 position-fixed end-0 p-2" data-bs-theme="dark">
+          2023-2023 Desarrolladores de SkillConnect. Todos los derechos reservados
+        </div>
+      </footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+[
+    {
+        "username" : "juanmuñoz",
+        "password" : "++++",
+        "email" : "juanmunoz@gmail.com",
+        "phone" : "3013484340",
+        "fullname" : "Juan Muñóz",
+        "role" : "worker",
+        "city" : "Barranquilla",
+        "company" : null,
+        "occupation" : "Albañil",
+        "verified" : true
+    },
+    {
+        "username" : "dianaibañez",
+        "password" : "1234",
+        "email" : "dianaibanez@gmail.com",
+        "phone" : "3013484341",
+        "fullname" : "Diana Ibáñez",
+        "role" : "worker",
+        "city" : "Barranquilla",
+        "company" : null,
+        "occupation" : "Niñera",
+        "verified" : true
+    },
+    {
+        "username" : "camiloortiz",
+        "password" : "++++",
+        "email" : "camiloortiz@gmail.com",
+        "phone" : "3013484342",
+        "fullname" : "Camilo Ortíz",
+        "role" : "worker",
+        "city" : "Barranquilla",
+        "company" : null,
+        "occupation" : "Desarrollador",
+        "verified" : true
+    },
+    {
+        "username" : "cmariogomez",
+        "password" : "++++",
+        "email" : "mariogomez@gmail.com",
+        "phone" : "3013484342",
+        "fullname" : "Mario Goméz",
+        "role" : "admin",
+        "city" : "Barranquilla",
+        "company" : null,
+        "occupation" : null,
+        "verified" : true
+    },
+    {
+        "username" : "juan",
+        "password" : "++++",
+        "email" : "juan@gmail.com",
+        "phone" : "3013484342",
+        "fullname" : "Juan Miguel",
+        "role" : "worker",
+        "city" : "Barranquilla",
+        "company" : null,
+        "occupation" : "Cocunero",
+        "verified" : true
+    }
+]

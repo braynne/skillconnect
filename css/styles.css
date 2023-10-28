@@ -1,0 +1,13 @@
+.navbar-right {
+    margin-left: auto;
+}
+
+.bg-developer {
+    background-image: url('../img/desarrollador.avif');
+    background-size: cover;
+}
+
+.bg-client {
+    background-image: url('../img/atencion-al-cliente.avif');
+    background-size: cover;
+}

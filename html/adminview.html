@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SkillConnect</title>
+        <link rel="stylesheet" href="../css/bootstrap/bootstrap.css">
+        <link rel="stylesheet" href="../css/styles.css">
+        <script src="../js/admin-check.js"></script>
+        <!--
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.bootstrap5.min.js"></script>-->
+
+    </head>
+
+    <body>
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-expand-md bg-body-tertiary bg-dark border-bottom border-body"
+                 data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img src="../img/logo.avif" alt="" width="24" height="24">
+                        SkillConnect
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="../index.html">Página principal</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contáctenos</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+
+                    <div class="d-flex" style="padding-left: 1%;">
+                        <input onclick="logout()" class="btn btn-secondary" type="button" value="Cerrar sesión">
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+
+        <div class="container-fluid">
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-4 col-sm-12 col-12 mt-3">
+                    <div class="list-group">
+                        <a href="home-admin.html" class="list-group-item list-group-item-action" aria-current="false">Inicio</a>
+                        <a href="profileAdmin.html" class="list-group-item list-group-item-action">Perfil</a>
+                        <a href="#" class="list-group-item list-group-item-action">Ajustes</a>
+                        <a href="adminview.html" class="list-group-item list-group-item-action active" aria-current="true">Vista de Administrador</a>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-9 col-md-8 col-sm-12 col-12 mt-3">
+                    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+                        <div id="message" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <strong class="me-auto">SkillConnect</strong>
+                                <small id="message-type"></small>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+                            </div>
+
+                            <div class="toast-body" id="message-text">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            Agregar administradores
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col col-lg-6 col-md-12 col-sm-12 col-12 py-1">
+                                    <div class="input-group">
+                                        <div class="input-group-text" id="mailicon">
+                                            Agregar como: 
+                                        </div>
+                                        <input type="text" id="usernameAgregar" name="usernameAgregar" class="form-control" placeholder="Nombre de usuario">
+                                    </div>
+
+
+                                </div>
+
+                                <div class="col col-lg-6 col-md-12 col-sm-12 col-12 py-1">
+                                    <div class="input-group">
+                                        <div class="input-group-text" id="mailicon2">
+                                            Correo: 
+                                        </div>
+                                        <input type="text" id="emailAgregar" name="emailAgregar" class="form-control" placeholder="Correo electrónico">
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="card-footer">
+                            <input type="button" class="btn btn-success input-group-text btn-sm" value="Agregar" onclick="guardarUsuario('admin')">
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            Actualizar cuentas
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col col-xl-4 col-xxl-4 col-lg-4 col-md-12 col-sm-12 col-12 py-1">
+                                    <div class="input-group">
+                                        <div class="input-group-text">
+                                            Nombre: 
+                                        </div>
+                                        <input type="text" id="usernameMod" name="usernameMod" class="form-control" placeholder="Nombre de usuario">
+                                    </div>
+                                </div>
+
+                                <div class="col col-xl-4 col-xxl-4 col-lg-4 col-md-12 col-sm-12 col-12 py-1">
+                                    <div class="input-group">
+                                        <div class="input-group-text">
+                                            Correo: 
+                                        </div>
+                                        <input type="text" id="emailMod" name="emailMod" class="form-control" placeholder="Correo electrónico">
+                                    </div>
+                                </div>
+
+                                <div class="col col-xl-4 col-xxl-4 col-lg-4 col-md-12 col-sm-12 col-12 py-1">
+                                    <div class="input-group">
+                                        <div class="input-group-text">
+                                            Rol: 
+                                        </div>
+                                        <input type="text" id="roleMod" name="roleMod" class="form-control" placeholder="Rol de usuario">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="card-footer">
+                            <input type="button" class="btn btn-success input-group-text btn-sm" value="Actualizar" onclick="actualizarUsuario()">
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            Eliminar usuarios
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group">
+                                <div class="input-group-text" id="mailicon">
+                                    Eliminar a: 
+                                </div>
+                                <input type="text" name="borrarCuenta" id="borrarCuenta" class="form-control" placeholder="Usuario">
+                                <input type="button" class="btn btn-danger input-group-text" value="Eliminar" onclick="borrarUsuario()">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            Usuarios
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <table id="data-table" class="table table-striped table-sm table-hover table-bordered">
+            
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <!-- comment
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            Usuarios en la nube (Google Sheets)
+                        </div>
+                        <div class="card-body">
+                            <div class="col">
+                                <h2>Listado de datos</h2>
+                                <div class="my-1">
+                                    <table class="table" id="tablaUsuarios">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Nombre de usuario</th>
+                                                <th scope="col">Correo</th>
+                                                <th scope="col">Rol</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            Usuarios locales (JSON Fetch)
+                        </div>
+                        <div class="card-body">
+                            <div class="col">
+                                <h2>Listado de datos</h2>
+                                <div class="my-1">
+                                    <table class="table" id="lista-usuarios">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Nombre de usuario</th>
+                                                <th scope="col">Nombre completo</th>
+                                                <th scope="col">Rol</th>
+                                                <th scope="col">Ocupación</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            Usuarios locales (LocalStorage)
+                        </div>
+                        <div class="card-body">
+                            <div class="col">
+                                <div class="my-1"></div>
+                                <h1>CRUD de Usuarios</h1>
+
+                                <!-- Formulario para agregar usuarios -->
+                                <form id="user-form">
+                                    <div class="row">
+                                        <div class="col col-xxl-3 col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 py-1">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="username" placeholder="Username" required>
+                                            </div>
+                                        </div>
+                                        <div class="col col-xxl-2 col-xl-2 col-lg-2 col-md-6 col-sm-6 col-12 py-1">
+                                            <div class="input-group"><!-- comment -->
+                                                <input type="password" class="form-control" id="password" placeholder="Password" required>
+                                            </div>
+                                        </div>
+                                        <div class="col col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-4 col-12 py-1">
+                                            <div class="input-group"><!-- comment -->
+                                                <input type="text" id="role" class="form-control" placeholder="Role" required>
+                                        </div>
+                                            </div>
+                                        <div class="col col-xxl-3 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 py-1">
+                                            <div class="input-group"><!-- comment --><!-- comment -->
+                                                <input type="text" id="occupation" class="form-control" placeholder="Occupation" required>
+                                            </div>
+                                            </div>
+                                        <div class="col col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-sm-4 col-12 py-1">
+                                            <div class="input-group d-grid">
+                                                <button type="submit" class="btn btn-primary btn-block">Agregar</button>
+                                        </div>
+                                            </div>
+                                    </div>
+                                    
+                                    
+                                </form>
+
+                                <!-- Tabla para mostrar la lista de usuarios -->
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Username</th>
+                                            <th>Password</th>
+                                            <th>Role</th>
+                                            <th>Occupation</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="user-list"></tbody>
+                                </table>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="../js/tabla-admin.js"></script>
+        <script src="../js/minscript.js"></script>
+        <script src="../js/script.js"></script>
+        <script src="../js/crud.js"></script>
+        <script src="../js/bootstrap/bootstrap.bundle.min.js"></script>
+
+        <footer class="footer">
+            <div class="container-fluid bg-dark text-center bg-body-tertiary text-light bottom-0 end-0 p-2" data-bs-theme="dark">
+                2023-2023 Desarrolladores de SkillConnect. Todos los derechos reservados
+            </div>
+        </footer>
+    </body>
+</html>
